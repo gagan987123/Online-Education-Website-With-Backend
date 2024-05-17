@@ -13,4 +13,4 @@ This repository contains the source code for an online education platform built 
 ## Installation
 1. Clone the repository:
    ```sh
-   git clone https://github.com/gagan987123/online-education-website.git
+   git clone https://github.com/gagan987123/Online-Education-Website.git
