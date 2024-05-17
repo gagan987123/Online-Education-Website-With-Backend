@@ -1,0 +1,36 @@
+extends ./layout/main.pug
+block link
+    link(rel="stylesheet", href="/css/style.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css")
+    link(rel="stylesheet", href="/css/swiper-bundle.min.css")
+block content 
+    section.courses#courses
+        h3.heading our
+            span courses
+        .swiper.course-slider
+            .swiper-wrapper
+                .swiper-slide.slide
+                    img(src="/img/Web devices-pana.svg", alt="#")
+                    h3 web devlopment
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque beatae rerum laudantium nemo voluptate maiores praesentium optio hic mollitia, aliquam ullam. Error, illum nobis excepturi nihil iste explicabo eveniet in.
+                .swiper-slide.slide
+                    img(src="/img/Coding workshop-amico.svg", alt="#")
+                    h3 DSA
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque beatae rerum laudantium nemo voluptate maiores praesentium optio hic mollitia, aliquam ullam. Error, illum nobis excepturi nihil iste explicabo eveniet in.
+                .swiper-slide.slide
+                    img(src="/img/Artificial intelligence-amico.svg", alt="#")
+                    h3 Artificial intelligence
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque beatae rerum laudantium nemo voluptate maiores praesentium optio hic mollitia, aliquam ullam. Error, illum nobis excepturi nihil iste explicabo eveniet in.
+                .swiper-slide.slide
+                    img(src="/img/Mobile development-bro.svg", alt="#")
+                    h3 app devlopment
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque beatae rerum laudantium nemo voluptate maiores praesentium optio hic mollitia, aliquam ullam. Error, illum nobis excepturi nihil iste explicabo eveniet in.
+                .swiper-slide.slide
+                    img(src="/img/Ecommerce web page-rafiki.svg", alt="#")
+                    h3 Digital marketing
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque beatae rerum laudantium nemo voluptate maiores praesentium optio hic mollitia, aliquam ullam. Error, illum nobis excepturi nihil iste explicabo eveniet in.
+                .swiper-slide.slide
+                    img(src="/img/Business Plan-pana.svg", alt="#")
+                    h3 project planing
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque beatae rerum laudantium nemo voluptate maiores praesentium optio hic mollitia, aliquam ullam. Error, illum nobis excepturi nihil iste explicabo eveniet in.
+            .swiper-pagination
