@@ -1,13 +1,19 @@
 const express = require('express');
 const contacts = require('../modals/contact-data');
 const review =require('../modals/review');
+const dotenv = require('dotenv');
+dotenv.config();
+const Groq = require("groq-sdk");
 const router = express.Router();
 const path = require('path');
+const course ='web dev';
 const data =[];
 router.get('/',(req,res,next)=>{
     // const p = path.join(path.dirname(process.mainModule.filename),'views','index.html');
 
     // res.sendFile(  p );
+   
+ 
     review.fatchAll((review)=>{
         res.render('index',{
 
@@ -16,6 +22,41 @@ router.get('/',(req,res,next)=>{
     })
   
    
+  
+})
+router.post('/ai',async(req,res,nest)=>{
+    const data = req.body.data;
+    try{
+        const groq = new Groq({
+            apiKey: process.env.GROQ_API_KEY
+        })
+        async function main(groq){
+            const chatcompletion = await getgroqchat(groq);
+            
+            const ans = chatcompletion.choices[0]?.message?.content || "";
+            res.render('cources',{
+                aidata:ans
+            })
+          
+        }
+        async function getgroqchat(groq){
+           
+            return groq.chat.completions.create({
+                messages:[
+                    {
+                        role:"user",
+                        content: data +'course in 100 words'
+                    }
+                ],
+                model:"llama3-8b-8192"
+            });
+        }
+         await main(groq);
+    }catch(err){
+        console.log(err);
+    
+    }
+ 
   
 })
  
@@ -51,7 +92,9 @@ router.post('/user-contact',(req,res,next)=>{
 router.get('/courses',(req,res,next)=>{
     // const p = path.join(path.dirname(process.mainModule.filename),'views','cources.html');
     // res.sendFile(p);
-    res.render('cources');
+    res.render('cources',{
+        aidata:null
+    });
 })
 
 router.post('/add-review',(req,res,next)=>{

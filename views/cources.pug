@@ -34,3 +34,8 @@ block content
                     h3 project planing
                     p Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque beatae rerum laudantium nemo voluptate maiores praesentium optio hic mollitia, aliquam ullam. Error, illum nobis excepturi nihil iste explicabo eveniet in.
             .swiper-pagination
+    form(action="/ai", method="post")
+        input(type="text" name="data")  
+        input(type="submit", value="submit")
+    .ai_box 
+        p #{aidata}
